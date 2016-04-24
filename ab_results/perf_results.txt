@@ -1,0 +1,59 @@
+Akka HTTP (after warmup)
+========================
+
+ab -c 400 -n 100000 -m GET http://localhost:3000/
+
+
+This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 10000 requests
+Completed 20000 requests
+Completed 30000 requests
+Completed 40000 requests
+Completed 50000 requests
+Completed 60000 requests
+Completed 70000 requests
+Completed 80000 requests
+Completed 90000 requests
+Completed 100000 requests
+Finished 100000 requests
+
+
+Server Software:        akka-http/2.4.4
+Server Hostname:        localhost
+Server Port:            3000
+
+Document Path:          /
+Document Length:        2 bytes
+
+Concurrency Level:      400
+Time taken for tests:   127.053 seconds
+Complete requests:      100000
+Failed requests:        0
+Total transferred:      16200000 bytes
+HTML transferred:       200000 bytes
+Requests per second:    787.07 [#/sec] (mean)
+Time per request:       508.212 [ms] (mean)
+Time per request:       1.271 [ms] (mean, across all concurrent requests)
+Transfer rate:          124.52 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    1  23.0      0     556
+Processing:     7  506 372.9    582    1695
+Waiting:        3  345 327.4    103    1151
+Total:          7  508 373.4    582    1695
+
+Percentage of the requests served within a certain time (ms)
+  50%    582
+  66%    599
+  75%    609
+  80%    622
+  90%   1082
+  95%   1105
+  98%   1136
+  99%   1547
+ 100%   1695 (longest request)
